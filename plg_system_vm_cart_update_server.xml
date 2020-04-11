@@ -1,7 +1,7 @@
 <updates>
     <update>
         <name>plg System Vm Cart</name>
-        <description><![CDATA[ plg System Vm Cart ]]></description>
+        <description><![CDATA[plg System Vm Cart]]></description>
         <type>plugin</type>
         <folder>system</folder>
         <element>plg_system_vm_cart</element>
