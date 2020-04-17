@@ -21,6 +21,7 @@
 -->
 	<!-- Plugin files -->
 	<files>
+		<folder>Controllers</folder>
 		<folder>language</folder>
 		<folder>Helpers</folder>
 		<filename>LICENSE</filename>
@@ -30,9 +31,42 @@
 	</files>
 
 	<!-- Config parameter -->
+
 	<config>
 		<fields name="params">
 			<fieldset name="basic">
+
+<!--				Стиль - вида корзмны 		-->
+				<field name="style_template"
+					type="list"
+					default="rosetka"
+					required="true"
+					label="PLG_SYSTEM_VM_CART_STYLE_TEMPLATE"
+					description="PLG_SYSTEM_VM_CART_STYLE_TEMPLATE_DESC"
+					class="style_template "
+					multiple="false"
+					readonly=""
+					showon=""
+					filter="raw" >
+						<option value="rosetka">PLG_SYSTEM_VM_CART_STYLE_TEMPLATE_DESC</option>
+
+					</field>
+
+					<field name="assets_patch"
+						type="text"
+						default=""
+						class="assets_patch "
+						readonly=""
+						required=""
+						label="PLG_SYSTEM_VM_CART_ASSETS_PATCH"
+						description="PLG_SYSTEM_VM_CART_ASSETS_PATCH_DESC"
+						showon=""
+						filter="raw" />
+
+
+
+
+
 				<field
 					name="sample"
 					type="text"
@@ -41,7 +75,86 @@
 					description="PLG_PLG_SYSTEM_VM_CART_SAMPLE_DESCRIPTION"
 				/>
 			</fieldset>
+			<fieldset name="Fields" addfieldpath="/plugins/system/plg_system_vm_cart/models/fields">
+				<field name="email_no_required"
+					type="radio"
+					default="0"
+					label="PLG_SYSTEM_VM_CART_EMAIL_NO_REQUIRED"
+					description="PLG_SYSTEM_VM_CART_EMAIL_NO_REQUIRED_DESC"
+					class="btn-group btn-group-yesno">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="email_no_autocomplete"
+					type="radio"
+					default="0"
+					label="PLG_SYSTEM_VM_CART_EMAIL_NO_AUTOCOMPLETE"
+					description="PLG_SYSTEM_VM_CART_EMAIL_NO_AUTOCOMPLETE_DESC"
+					class="btn-group btn-group-yesno">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="email_info"
+					type="text"
+					default="PLG_SYSTEM_VM_CART_EMAIL_INFO_TEXT_DEFAULT"
+					class="email_info "
+					readonly=""
+					required=""
+					label="PLG_SYSTEM_VM_CART_EMAIL_INFO"
+					description="PLG_SYSTEM_VM_CART_EMAIL_INFO_DESC"
+					showon=""
+					filter="raw" />
+
+				<field name="phone_mask"
+					type="radio"
+					default="1"
+					label="PLG_SYSTEM_VM_CART_PHONE_MASK"
+					description="PLG_SYSTEM_VM_CART_PHONE_MASK_DESC"
+					class="btn-group btn-group-yesno">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="min_phone_number"
+					type="text"
+					default="12"
+					class="min_phone_number "
+					readonly=""
+					required=""
+					label="PLG_SYSTEM_VM_CART_MIN_PHONE_NUMBER"
+					description="PLG_SYSTEM_VM_CART_MIN_PHONE_NUMBER_DESC"
+					showon=""
+					filter="raw" />
+
+				<field name="userfields_in_title"
+					type="vm_userfields"
+					default=""
+					required=""
+					label="PLG_SYSTEM_VM_CART_USERFIELDS_IN_TITLE"
+					description="PLG_SYSTEM_VM_CART_USERFIELDS_IN_TITLE_DESC"
+					class="userfields_in_title "
+					multiple="true"
+					readonly=""
+					showon=""
+					filter="raw"  />
+
+			</fieldset>
+			<fieldset name="Style">
+				<field name="add_stile"
+					type="textarea"
+					label="PLG_SYSTEM_VM_CART_ADD_STILE"
+					rows="10"
+					cols="5"
+					default=""
+					class="add_stile "
+					readonly=""
+					required=""
+					description="PLG_SYSTEM_VM_CART_ADD_STILE_DESC"
+					showon=""
+					filter="raw"
+					hint="Add style" />
+			</fieldset>
 		</fields>
+
 	</config>
 
 	<!-- Update servers -->
@@ -52,5 +165,3 @@
 
 		<!-- https://github.com/gartes/vm_salesdrive/archive/master.zip -->
 
-		</updateservers>
-</extension>
